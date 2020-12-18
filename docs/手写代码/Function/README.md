@@ -26,7 +26,7 @@ foo.bind() // 1
 /**
  * @param{*}context 传入this需要绑定的对象
  */
-Function.prototype._call = (context)=>{
+Function.prototype._call = function(context){
  // 先对调用者进行判断，是否是函数
   if( typeof this != 'function'){
      throw typeError('not a function call')
@@ -48,7 +48,7 @@ Function.prototype._call = (context)=>{
 /**
  * @param{*}context 传入this需要绑定的对象
 */
-Function.prototype._apply=(context)=>{
+Function.prototype._apply= function(context){
  //先判断调用者是否为函数
  if(typeof this !='function'){
   throw typeError('not a function call')
@@ -70,7 +70,7 @@ Function.prototype._apply=(context)=>{
 /**
  * @param{*} context 传入this需要绑定的对象
 */
-Function.prototype._bind = (context)=>{
+Function.prototype._bind = function(context){
  // 先判断调用者是否为函数
  if(typeof this !='function'){
   throw typeError('not a function bind')
